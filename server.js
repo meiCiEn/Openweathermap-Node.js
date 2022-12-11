@@ -12,7 +12,7 @@ require('dotenv').config();
 // Set up our openweathermap API_KEY
 
 const apiKey = `${process.env.API_KEY}`;
-
+const apiKey2= "0643a02538055203c8233eef8f24b033";
 // Setup our express app and body-parser configurations
 // Setup our javascript template view engine
 app.use(express.static('public'));
@@ -34,7 +34,7 @@ app.post('/', function(req, res) {
 
     // Use that city name to fetch data
     // Use the API_KEY in the '.env' file
-    let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
 
     // Request for data using the URL
     request(url, function(err, response, body) {
@@ -81,6 +81,6 @@ app.post('/', function(req, res) {
 });
 
 // We shall set up our port configurations
-app.listen(5000, function() {
-    console.log('Weather app listening on port 5000!');
+app.listen(4000, function() {
+    console.log('Weather app listening on port 4000!');
 });
